@@ -13,7 +13,7 @@ func TestInfoWithArgs(t *testing.T) {
 
 func TestJSONHandler(t *testing.T) {
 	logger := slog.New(slog.NewJSONHandler(os.Stdout))
-	logger.Info("hello structured log", "name", "blue")
+	logger.Info("hello structured log", "name", "blue", "No", 5)
 }
 
 func TestWith(t *testing.T) {

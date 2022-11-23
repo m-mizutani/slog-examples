@@ -19,3 +19,13 @@ func TestLogValuer(t *testing.T) {
 	logger := slog.New(slog.NewJSONHandler(os.Stdout))
 	logger.Info("hello", "s", s)
 }
+
+func TestNestedLogValuer(t *testing.T) {
+	v := struct {
+		Str upperCase
+	}{
+		Str: "is it small?",
+	}
+	logger := slog.New(slog.NewJSONHandler(os.Stdout))
+	logger.Info("hello", "v", v)
+}
